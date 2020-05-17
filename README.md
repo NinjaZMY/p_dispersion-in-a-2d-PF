@@ -1,5 +1,5 @@
 # p_dispersion-in-a-2d-PF
-this is a respository showing programs that translate the p-dispersion in a 2d pareto front algorithms , 
+this is a repository showing programs that translate the p-dispersion in a 2d pareto front algorithms , 
 
 I'm not covering all the alogrithms , but a portion of them ! 
 
