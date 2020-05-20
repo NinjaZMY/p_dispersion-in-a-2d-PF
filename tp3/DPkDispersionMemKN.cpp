@@ -24,6 +24,8 @@ float Minimum(float x,float y);
 
 float max(float Array[],int length);
 
+void ShowMatrix(float** M,int N);
+
 void showI(std::vector<int> T);
 
 
@@ -61,22 +63,32 @@ void DPkDispersionMemKN::fillLign(int k) {
 	
 }
 
-void DPkDispersionMemKN::fillresult() {
-
-// Deuxieme Etape C[i,2]=d(E[i],E[0])
-    //createMatrixDP();
-    
-	cout <<"\n Affichage de la Matrice avant l'etape 2 : ";
-    cout << "\n avec [ i <1;N-1> ] C[i,2] = d(E[i],E[0]); "<<endl;
-    for (int i=0;i<N;i++)
+void ShowMatrix(float** M,int N)
+{
+  for (int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
         {
         //Affichage de la Matrice
-        cout << matrixDP [i][j] << " ; ";    
-        }
-    cout<< endl;
-    }   //*/ 
+        cout << M [i][j] << " ; ";    
+        }//end of for j ! 
+    cout<< endl; 
+	;
+    }   //end of for i !  
+}//end of function ShowMatrix !  
+
+
+void DPkDispersionMemKN::fillresult() {
+
+// Deuxieme Etape C[i,2]=d(E[i],E[0])
+//createMatrixDP();
+    
+	cout <<"\n Affichage de la Matrice avant l'etape 2 : ";
+    cout << "\n avec [ i <1;N-1> ] C[i,2] = d(E[i],E[0]); "<<endl;
+
+	ShowMatrix(matrixDP,N);
+
+
     
     for (int i=1;i<N;i++) 
     {
@@ -87,15 +99,7 @@ void DPkDispersionMemKN::fillresult() {
 
 	cout <<"\n Affichage de la Matrice a l'etape 2 : ";
     cout << "\n avec [ i <1;N-1> ] C[i,2] = d(E[i],E[0]); "<<endl;
-    for (int i=0;i<N;i++)
-    {
-        for(int j=0;j<N;j++)
-        {
-        //Affichage de la Matrice
-        cout << matrixDP [i][j] << " ; ";    
-        }
-    cout<< endl;
-    }	//printMatrix1;
+	ShowMatrix(matrixDP,N);//printMatrix1;
 
 
 // Troisieme Etape
@@ -171,15 +175,8 @@ void DPkDispersionMemKN::fillresult() {
  	*/
 	cout << " C[i,k] = max [j <k-1 to i-1> ] (C[j,k-1]+d(E[j],E[i]) )"<<endl;//tp2
 		
-	for (int i=0;i<N;i++)
-    {
-        for(int j=0;j<N;j++)
-        {
-        //Affichage de la Matrice
-        cout << matrixDP [i][j] << " ; ";    
-        }//end for j
-    cout<< endl;
-	}//end for i 
+	ShowMatrix(matrixDP,N);//printMatrix1;
+
 
 	//**Fin de l'etape3**
 	
@@ -252,15 +249,7 @@ void DPkDispersionMemKN::fillFirstLine(){
 
 	cout<<"\n Affichage de la Matrice a l'etat brute : ";
     cout << "\n les valeurs indefinis sont affecte aleatoirement "<<endl;
-    for (int i=0;i<N;i++)
-    {
-        for(int j=0;j<N;j++)
-        {
-        //Affichage de la Matrice
-        cout << matrixDP [i][j] << " ; ";    
-        }
-    cout<< endl;
-    }	//printMatrix1;
+	ShowMatrix(matrixDP,N);//printMatrix1;
     
     
     cout<<"\n Affichage de la Matrice\n Etape 1  : ";
