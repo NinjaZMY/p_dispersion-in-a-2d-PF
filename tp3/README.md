@@ -1,10 +1,15 @@
 # TP_Matrix3 
 
-to_add : Algo3.png ! 
+Added : Algo3.png ! 
 
-check your js file + your c++ file  ! 
-check : how to execute the project 
-& using that you should get , the files in which you need to modify in order to make everything working ! 
+checked my js file + my c++ files  !
+
+might get rid of the usage of main.ccp & instance.cpp
+
+guess like you have to work on the remaining two files
+-------------------------------------------------------
+
+The code works on Windows & linux ! 
 
 -------------------------------------------------------
 
