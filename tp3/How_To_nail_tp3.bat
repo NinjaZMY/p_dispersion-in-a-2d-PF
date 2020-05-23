@@ -61,7 +61,6 @@ Readme,DPkDispersionMemKN.cpp
 "done"
 ---------------------------------------------------------
 3rd step : 
-<current step>  
 
 we gonna remove all the useless code 
 and prints 
@@ -114,22 +113,17 @@ start typing the pseudo-code !
 "done"
 
 
+
 commit (on branch master)
 pseudoCodeC++.cpp,DPkDispersionMemKN.cpp,How_To_nail_tp3
 ,Tp3_Log.bat
 "New::pseudoCode+Log+Comprehended_the_algorithm"
 
-<to do>
-
-
-
+:Done:
 
 ---------------------------------------------------------
 
-step pre-final_1.0
-
-
-<not yet> 
+step final_1.0
 
 
 *
@@ -142,10 +136,14 @@ prolly as a comment
 create that file & work on it ! 
 
 "doing"
+:This Task is kinda delayed cause it ain't mendatory: 
+
 
 *create matrix dynamically as tp2 
 
 <to do > 
+:This Task is kinda delayed cause it ain't mendatory: 
+
 
 *fill the matrix like tp2 , 
 the matrix should look like 
@@ -153,28 +151,159 @@ the last piece of the matrix in tp2 ;
 fill the matrix randomly
 -using K & N- 
 <to do> 
+:This Task is kinda delayed cause it ain't mendatory: 
+
+make it work on pseudo_CodeC++.cpp
+<doing>
+:This Task is kinda delayed cause it ain't mendatory: 
+
+check if you can call a foreign compute , 
+or create a new compute function 
+
+==> function already exists ! 
+ComputeCase(i,k);
+<done> 
+
+*assign to "k" & "i"   the correct set of values 
+
+-on pseudoCodeC++.cpp 
+<done> 
+-on DPkDispersionMemKN.cpp  
+<done> 
+
+*correct the comments on DPkDispersionMemKN.cpp 
+<done> 
+
+*call the compute function , 
+using a function pointer 
+
+<done> 
+
+
+*solved a function pointer error , 
+in DPkDispersionMemKN.cpp 
+
+<done>
+
+*call computecase , 
+with a function pointer 
+:in DPkDispersionMemKN.cpp:
+
+<done> 
+
+*correct the program display 
+on DPkDispersionMemKN.cpp 
+
+"done"
+
+*made the compute Working with "N","ComputingIndex" & "k" 
+
+"done"
+
+*made "matrixDp" work inside of compute too ! 
+
+"done"
 
 apply the compute algorithm , 
 on the last version of the matrix ; 
 
-<to do> 
+<done> 
 
 
 display everything 
 
-<to do> 
+<done> 
 
 
-make it work on pseudo_CodeC++.cpp
-<to do> 
+*using pseudo_CodeC++.cpp : 
+make K [3,N-2] ; 
+make i [K+1,N-1] ; 
+-
+solving errors of indexations 
+that would cause the program to instantly crush 
+due to : rand()%0 ; 
+:can't divide by zero:
+"fixed"
+<done>
+
+HAD TO FIX ANOTHER k ERROR 
+in order to make K[3,N-2] 
+on pseudo_CodeC++.cpp 
+"fixed"
+<done> 
+
+*using pseudo_CodeC++.cpp : 
+make K [3,N-2] ; 
+make i [K+1,N-1] ; 
+on the main program , 
+modifying the file DPkDispersionMemKN.cpp 
+<done> 
 
 
-check if you can call a foreign compute , 
-or create a new compute function 
-<to do> 
+
+fill 
+the 
+Log3.bat file 
+with different Scenarios ! 
+
+Scénario 1 : 
+without the while loop 
+
+Scenario 2 : 
+with the while loop ! 
+
+
+<done>
+
+
+Create a file 
+on how to open the project 
+
+ReadmeFR.bat
 
 
 
+<done> 
 
+
+-
+
+
+
+commit 
+pseudo_CodeC++.cpp , 
+main.cpp ,
+DPkDispersion.cpp,
+DPkDispersionMemKN.cpp, 
+DPkDispersionMemKN.hpp,
+
+Readme.Md,
+ReadmeFR.bat,
+
+exe.exe , 
+pseudo_CodeC++.exe , 
+a.exe
+
+"finished Every Thing - Ready to Send ! "
+
+:done: 
+---------------------------------------------------------
+
+step final1.0Alpha 
+<current step> 
+
+
+*forgot to commit 
+How_To_nail_tp3.bat,
+- time to commit 
+
+
+commit 
+"Commiting_Final1.0 HowToNail_Tp3.bat"
+
+
+:to do: 
 
 ---------------------------------------------------------
+
+
