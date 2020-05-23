@@ -28,10 +28,11 @@ int main(int argc, char **argv) {
 		
 	    cout << "Contructeur fini\n"; // "k = "<< k << "\n";
 	    std::chrono::time_point<std::chrono::system_clock> start, end;
+		solver3.display();
 		start = std::chrono::system_clock::now();
 		solver3.solve();
 		end = std::chrono::system_clock::now();
-	    solver3.display();
+	    
 	    cout << "REsolution terminee en  "<< std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() <<" ms\n";
 		
 	return 0;

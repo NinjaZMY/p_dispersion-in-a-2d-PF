@@ -16,13 +16,15 @@ void DPkDispersion::importInstance(string filename){
 
 void DPkDispersion::display() {
 	instance.display();
-    cout << "\nN= " << N << " , K= " << K << " , OPT=" << OPT  << endl;
+    cout << "\nN = " << N << endl; 
+	//<< " , K= " << K ;
+	//cout << " , OPT=" << OPT  << endl;
 
-	 cout<<"\nSelection des points:\n";
+/* 	 cout<<"\nSelection des points:\n";
 	 for (vector<int>::iterator it2 = solution.begin() ; it2 != solution.end(); ++it2){
 		 cout  << *it2 << " ";
 	 }
-	 cout <<endl<<endl;
+	 cout <<endl<<endl; */
 }
 
 void DPkDispersion::clearOPT(){

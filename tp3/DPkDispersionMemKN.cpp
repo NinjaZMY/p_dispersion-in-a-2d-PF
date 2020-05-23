@@ -15,10 +15,18 @@ struct point
 		int index ;
 		float value;
 	} ;
-point maxAndIndex(point T[],int length);
+
+
+
+
+
+
+
 
 
 ///  Fonctions 
+
+point maxAndIndex(point T[],int length);
 
 float Minimum(float x,float y);
 
@@ -47,12 +55,115 @@ void DPkDispersionMemKN::deleteMatrixDP(){
 	cout << " Matrice Effacee "<<endl;
 }
 
-std::pair<float, int> computeCase(int k, int n) {
+pair<float, int> DPkDispersionMemKN::computeCase(int k, int i) 
+{
 	int id = -1;
 	float value = 0;
+
+															
+	cout << "-----------------------------------------------------\n";
+	cout << "               a partir l'algorithme 2               \n";
+	cout<<"          on ajoute un pointeur de fonction \n";
+	cout<<"          ce pointeur pointe sur ComputeCase ;\n" ;  
+	cout << "               Et c'est ainsi que ...\n";
+	cout << "______________ L'algorithme 3 se lance ______________\n";
+    cout << "\nK = "<<k; 
+    cout<< " ; ComputingIndex = "<<i<<" ; N = "<<N;
+	
+	//le cout qui suit est utilisé  pour tester ce programme ! 
+	//cout<<"\n M[0][2] = "<<matrixDP[0][2]<<" ; supposé égal à zéro ! ";
+	cout<<endl;
+
+	int a=k-1;
+	int b=i-1;
+
+	//cout <<"\n-----------------------";
+	cout <<"\nb - a = "<<b<<" - "<<a<<" = "<<b-a<<endl;
+
+
+
+
+	bool WouldLoop=(b-a)>=2;
+	
+	if( WouldLoop)
+	//avant la boucle while !
+	cout << "\n:: Dans la boucle while   ::\n\n";
+	//end if 
+
+ 		while(WouldLoop) 
+		{
+		int j=(a+b)/2;
+		cout <<"a = "<<a<<" ; b = "<<b<<" ;\n"; 
+		cout <<"b - a = "<<b-a<<" >= 2 ;\n j = ( a + b ) / 2 = ( "<<a<<" + ";
+		cout << b<<" ) / 2 = ( "<< a+b <<" ) / 2 = "<<j<<" ;\n\n"; 
+
+
+
+
+
+ 			if(matrixDP[k-1][j]-dist(j,i)>0)
+			{
+				if(b==j)
+				break ; 
+				//end if 
+
+			//pour éviter une boucle infinie ! 	
+
+			b=j; 
+			cout << "b devient : "<<j<<endl; 
+			}
+			else 
+			{
+				if(a==j)
+				break ; 
+				//end if 
+
+			//pour éviter une boucle infinie ! 	
+
+			a=j; 
+			cout << "a devient : "<<j<<endl; 
+			}//end of if  
+
+
+
+		}//end of while  
+	
+	if( WouldLoop)
+	{
+	cout <<"b - a = "<<b<<" - "<<a<<" = "<<b-a<<" < 2 "<<endl;
+	cout << "\n:: Fin de la boucle while ::\n\n";	
+	}//end if 
+
+	float Min1=Minimum(matrixDP[k-1][a],dist(a,i)) ;   
+	float Min2=Minimum(matrixDP[k-1][b],dist(b,i)) ;   
+
+	bool condition=Min1<Min2;
+
+		if(condition)
+		{
+		value=Min2; 
+		id=b;
+		}
+		else
+		{
+		value=Min1; 
+		id=a; 	
+		}//end of if 
+	
+	cout << "\n Max = "<<value<<" ; argmax = "<<id<<"\n\n" ;
+
+
+	
+	//this is only for testing ! 
+	cout << "K = "<<k; 
+    cout<< " ; ComputingIndex = "<<i<<" ; N = "<<N<<"\n\n";
+	
+	cout << "______________ Fin de l'algorithme 3 ! ______________\n\n";
+
+
 	return make_pair(value,id);
 
-}
+}//end of compute 
 
 void DPkDispersionMemKN::fillLign(int k) {
 // Premiere Etape
@@ -362,28 +473,28 @@ void DPkDispersionMemKN::solve(){
 	clearOPT();
 
 /*
-x=4;
-y=x-4=0 ; 
-rY=Value( [0,y] )=0 ; 
-K=4+rY;
 
-x=10 ; 
-y=x-4=6; 
-rY=Value( [0,6] ); 
-
-if(rY==0)=> K=4 ; 
-else if (rY==6) => k=10 ; 
-else 
-K=Value([4,10])
-
+K limits from [3,N-2]
+int ComputingIndex=rand()%(N-1-K)+K+1;//[k+1,N-1]
 
 */
 /// Faire le Set de K  avec une valeur Aleatoire 
 
-//la valeur varie entre ]3,N] 
+//la valeur varie entre ]2,N-1] 
     srand (time(NULL));
-	int x=rand()%(N-3)+4;
-    setK(x);
+	//N se trouve dans l'intervalle : [5,N_Limit]
+
+	int k;
+	int Exp=N-4;
+		if(Exp!=0)
+		k=rand()%(Exp); 
+		else
+		k=0;
+		//end if 
+
+	int K=k+3;//[3,N-2]
+
+    setK(K);
     cout <<" K = " << K<< endl;
  
 	if (K<=2) {
@@ -398,6 +509,26 @@ K=Value([4,10])
 	for (int k=2 ; k < K; k++ )fillLign(k); 
 	fillresult();
 	backtrack(); 
+	//the compute program starts from here ! 
+
+	pair<float,int> (DPkDispersionMemKN::*functionPointer)(int,int);
+	functionPointer=computeCase;
+
+	int ComputingIndex=rand()%(N-1-K)+K+1;//[k+1,N-1]
+
+	 
+/*	
+	this is the alternative solution to this ! 
+	DPkDispersionMemKN functionCallerObject; 
+
+ 	functionCallerObject.N=N; 
+	functionCallerObject.matrixDP=matrixDP; */
+	//instead of this : &functionCallerObject
+
+	(this->*functionPointer)(K,ComputingIndex);
+
+
+	//the compute program ends here !
 	deleteMatrixDP();
 }
 

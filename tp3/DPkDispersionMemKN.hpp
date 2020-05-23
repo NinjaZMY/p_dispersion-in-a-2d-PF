@@ -19,7 +19,7 @@ class DPkDispersionMemKN : public DPkDispersion {
     float** matrixDP;
 		
 		
-    std::pair<float, int> computeCase(int k, int n);
+    std::pair<float, int> computeCase(int k, int i);
 
 	void deleteMatrixDP();
 
