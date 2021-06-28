@@ -2,13 +2,13 @@
 
 Added : Algo3.png !
 
-Got heavily inspired from my js file + my c++ files  ;
+Got heavily inspired from my js file + my C++ files  ;
 
 In order to achieve the program of the 3rd algorithm !
 
 wouldn't much modify main.ccp & instance.cpp
 
-## Guess like you have to work on the remaining two files
+# Guess like you have to work on the remaining two files
 
 -------------------------------------------------------
 
